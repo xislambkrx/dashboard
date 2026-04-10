@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+}
+body {
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+/* BUTTON */
+.menu-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 2000;
+  background: #2563eb;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 900;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 240px;
+  height: 100%;
+  background: #1e293b;
+  padding: 20px;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background: #2563eb;
+}
+
+/* MAIN */
+.main {
+  padding: 20px;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.card {
+  flex: 1;
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background: #1e293b;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #334155;
+}
+
+th {
+  background: #2563eb;
+}
+
+/* BUTTON */
+.add-btn {
+  background: #2563eb;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-content input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.modal-content button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#updateProduct {
+  background: #22c55e;
+  color: white;
+}
+
+#closeEdit {
+  background: #ef4444;
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+
+  /* MAIN takes full width */
+  .main {
+    margin: 0;
+    padding: 12px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+
+  /* stats become vertical */
+  .stats {
+    flex-direction: column;
+  }
+
+  /* cards bigger for touch */
+  .card {
+    font-size: 18px;
+    padding: 18px;
+  }
+
+  /* table scroll fix */
+  table {
+    font-size: 14px;
+  }
+
+  /* sidebar full height overlay style */
+  .sidebar {
+    width: 260px;
+  }
+
+  /* better modal size */
+  .modal-content {
+    width: 95%;
+  }
+
+  /* buttons bigger (mobile UX) */
+  button {
+    padding: 12px 16px;
+    font-size: 16px;
+    .table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+}
+  }
+}

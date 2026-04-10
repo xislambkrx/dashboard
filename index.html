@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- BUTTON -->
+<button id="menuToggle" class="menu-btn">
+  <i class="fa-solid fa-bars"></i>
+</button>
+
+<!-- OVERLAY -->
+<div id="overlay" class="overlay"></div>
+
+<!-- SIDEBAR -->
+<div id="sidebar" class="sidebar">
+  <h2><i class="fa fa-store"></i> المتجر</h2>
+  <ul>
+    <li><i class="fa fa-box"></i> المنتجات</li>
+    <li><i class="fa fa-chart-line"></i> الإحصائيات</li>
+    <li><i class="fa fa-gear"></i> الإعدادات</li>
+  </ul>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <h1>لوحة التحكم</h1>
+
+  <div class="stats">
+    <div class="card"><i class="fa fa-box"></i> <span id="totalProducts">0</span></div>
+    <div class="card"><i class="fa fa-fire"></i> <span id="totalConsumed">0</span></div>
+    <div class="card"><i class="fa fa-layer-group"></i> <span id="totalRemaining">0</span></div>
+  </div>
+
+  <button id="addProductBtn" class="add-btn">
+    <i class="fa fa-plus"></i> إضافة منتج
+  </button>
+
+  <table id="productTable">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>النوع</th>
+        <th>المتوفر</th>
+        <th>المستهلك</th>
+        <th>المتبقي</th>
+        <th>حذف</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2>إضافة منتج</h2>
+    <input id="newType" placeholder="نوع المنتج">
+    <input id="newAvailable" type="number" placeholder="الكمية">
+
+    <button id="saveProduct">حفظ</button>
+    <button id="closeModal">إلغاء</button>
+  </div>
+</div>
+
+<!-- EDIT MODAL -->
+<div id="editModal" class="modal">
+  <div class="modal-content">
+    <h2>تعديل المنتج</h2>
+
+    <input type="text" id="editType" placeholder="نوع المنتج">
+    <input type="number" id="editAvailable" placeholder="المتوفر">
+    <input type="number" id="editConsumed" placeholder="المستهلك">
+
+    <button id="updateProduct">تحديث</button>
+    <button id="closeEdit">إلغاء</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
