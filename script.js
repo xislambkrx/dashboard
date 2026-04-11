@@ -164,11 +164,9 @@ window.onclick = (e) => {
    INIT
 ========================= */
 render();
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/sw.js")
-      .then(() => console.log("Service Worker Registered"))
-      .catch(err => console.log("SW Error:", err));
-  });
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(() => console.log('Service Worker registered'));
+}
+
 }
